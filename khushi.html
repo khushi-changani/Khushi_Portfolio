@@ -1,0 +1,1361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<title>Khushi Changani • AI & ML Engineer</title>
+
+<!-- GOOGLE FONTS -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@500;600;700;800&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+
+  --bg:#050816;
+  --bg2:#0f172a;
+
+  --surface:rgba(17,25,40,0.55);
+
+  --accent:#8b5cf6;
+  --accent2:#38bdf8;
+  --accent3:#22c55e;
+
+  --text:#f8fafc;
+  --muted:#94a3b8;
+
+  --border:rgba(255,255,255,0.08);
+
+  --heading:'Playfair Display', serif;
+  --body:'Plus Jakarta Sans', sans-serif;
+  --modern:'Syne', sans-serif;
+  --mono:'IBM Plex Mono', monospace;
+
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+
+  font-family:var(--body);
+
+  background:
+  radial-gradient(circle at top left, rgba(96,165,250,0.10), transparent 28%),
+  radial-gradient(circle at bottom right, rgba(168,85,247,0.10), transparent 28%),
+  var(--bg);
+
+  color:var(--text);
+
+  overflow-x:hidden;
+
+}
+
+/* PARTICLES */
+
+#particles{
+
+  position:fixed;
+  inset:0;
+
+  z-index:-1;
+
+}
+
+/* NAVBAR */
+
+nav{
+
+  position:fixed;
+
+  top:0;
+  left:0;
+
+  width:100%;
+
+  padding:22px 70px;
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  background:rgba(5,8,22,0.7);
+
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
+
+  border-bottom:1px solid var(--border);
+
+  z-index:999;
+
+}
+
+.logo{
+
+  text-decoration:none;
+
+  color:white;
+
+  font-family:var(--modern);
+
+  font-size:28px;
+
+  font-weight:800;
+
+  letter-spacing:-0.05em;
+
+}
+
+.logo span{
+
+  color:var(--accent2);
+
+}
+
+.nav-links{
+
+  display:flex;
+
+  gap:40px;
+
+  list-style:none;
+
+}
+
+.nav-links a{
+
+  text-decoration:none;
+
+  color:var(--muted);
+
+  font-size:11px;
+
+  font-family:var(--modern);
+
+  text-transform:uppercase;
+
+  letter-spacing:0.18em;
+
+  font-weight:700;
+
+  transition:.3s;
+
+}
+
+.nav-links a:hover{
+
+  color:white;
+
+}
+
+/* HERO */
+
+.hero{
+
+  min-height:100vh;
+
+  display:flex;
+  align-items:center;
+
+  padding:140px 70px;
+
+  position:relative;
+
+}
+
+.hero-glow{
+
+  position:absolute;
+
+  width:420px;
+  height:420px;
+
+  top:-100px;
+  right:-120px;
+
+  border-radius:50%;
+
+  background:
+  radial-gradient(circle,
+  rgba(139,92,246,0.22),
+  transparent 70%);
+
+  filter:blur(40px);
+
+  opacity:.7;
+
+  animation:floaty 7s ease-in-out infinite;
+
+}
+
+.hero-content{
+
+  max-width:900px;
+
+  position:relative;
+
+  z-index:2;
+
+}
+
+.hero-tag{
+
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+
+  padding:10px 18px;
+
+  border-radius:50px;
+
+  border:1px solid rgba(255,255,255,0.08);
+
+  background:rgba(255,255,255,0.03);
+
+  color:var(--accent2);
+
+  font-size:12px;
+
+  margin-bottom:30px;
+
+  animation:fadeUp 1s ease forwards;
+
+}
+
+.hero-tag::before{
+
+  content:'';
+
+  width:8px;
+  height:8px;
+
+  border-radius:50%;
+
+  background:var(--accent3);
+
+}
+
+.hero-name{
+
+  font-family:var(--heading);
+
+  font-size:clamp(72px,11vw,170px);
+
+  line-height:0.88;
+
+  font-weight:700;
+
+  letter-spacing:-0.08em;
+
+  margin-bottom:25px;
+
+  animation:fadeUp 1s ease .2s forwards;
+
+  opacity:0;
+
+}
+
+.hero-name .stroke{
+
+  color:transparent;
+
+  -webkit-text-stroke:1px rgba(255,255,255,0.45);
+
+  font-style:italic;
+
+}
+
+.hero-title{
+
+  font-family:var(--mono);
+
+  font-size:12px;
+
+  letter-spacing:0.35em;
+
+  text-transform:uppercase;
+
+  color:var(--accent2);
+
+  margin-bottom:30px;
+
+  animation:fadeUp 1s ease .4s forwards;
+
+  opacity:0;
+
+}
+
+.hero-desc{
+
+  max-width:720px;
+
+  line-height:2;
+
+  color:#b8c1d9;
+
+  font-size:18px;
+
+  margin-bottom:50px;
+
+  animation:fadeUp 1s ease .6s forwards;
+
+  opacity:0;
+
+}
+
+.hero-stats{
+
+  display:flex;
+
+  flex-wrap:wrap;
+
+  gap:50px;
+
+  margin-bottom:50px;
+
+  animation:fadeUp 1s ease .8s forwards;
+
+  opacity:0;
+
+}
+
+.stat h2{
+
+  font-size:54px;
+
+  font-family:var(--modern);
+
+  font-weight:800;
+
+}
+
+.stat p{
+
+  color:var(--muted);
+
+  font-family:var(--mono);
+
+  font-size:11px;
+
+  letter-spacing:0.2em;
+
+  text-transform:uppercase;
+
+}
+
+.hero-btns{
+
+  display:flex;
+
+  flex-wrap:wrap;
+
+  gap:20px;
+
+  animation:fadeUp 1s ease 1s forwards;
+
+  opacity:0;
+
+}
+
+.btn{
+
+  padding:16px 30px;
+
+  border-radius:14px;
+
+  text-decoration:none;
+
+  font-family:var(--modern);
+
+  font-size:12px;
+
+  text-transform:uppercase;
+
+  letter-spacing:0.12em;
+
+  font-weight:700;
+
+  transition:.35s;
+
+}
+
+.btn-primary{
+
+  background:
+  linear-gradient(
+  135deg,
+  var(--accent),
+  var(--accent2)
+  );
+
+  color:white;
+
+}
+
+.btn-secondary{
+
+  border:1px solid var(--border);
+
+  color:white;
+
+  background:rgba(255,255,255,0.03);
+
+}
+
+.btn:hover{
+
+  transform:translateY(-4px);
+
+}
+
+/* SECTION */
+
+section{
+
+  padding:110px 70px;
+
+}
+
+.section-top{
+
+  margin-bottom:70px;
+
+}
+
+.section-tag{
+
+  color:var(--accent2);
+
+  font-family:var(--mono);
+
+  font-size:12px;
+
+  letter-spacing:0.3em;
+
+  text-transform:uppercase;
+
+  margin-bottom:20px;
+
+}
+
+.section-title{
+
+  font-family:var(--heading);
+
+  font-size:clamp(50px,7vw,90px);
+
+  line-height:0.95;
+
+  letter-spacing:-0.06em;
+
+}
+
+.section-title em{
+
+  color:var(--muted);
+
+  font-style:italic;
+
+  font-weight:500;
+
+}
+
+/* GLASS */
+
+.glass{
+
+  background:
+  linear-gradient(
+  135deg,
+  rgba(255,255,255,0.04),
+  rgba(255,255,255,0.015)
+  );
+
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
+
+  border:1px solid rgba(255,255,255,0.08);
+
+  box-shadow:
+  0 8px 25px rgba(0,0,0,0.25);
+
+  border-radius:28px;
+
+}
+
+/* ABOUT */
+
+.about-grid{
+
+  display:grid;
+
+  grid-template-columns:1fr 1fr;
+
+  gap:40px;
+
+}
+
+.about-left,
+.about-right{
+
+  padding:45px;
+
+}
+
+.about-left p{
+
+  line-height:2;
+
+  color:#b0bdd7;
+
+  margin-bottom:20px;
+
+}
+
+.cgpa{
+
+  font-size:110px;
+
+  font-family:var(--heading);
+
+  line-height:1;
+
+  background:
+  linear-gradient(
+  135deg,
+  white,
+  var(--accent2)
+  );
+
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+
+}
+
+.info{
+
+  margin-top:30px;
+
+}
+
+.info-row{
+
+  display:flex;
+  justify-content:space-between;
+
+  padding:15px 0;
+
+  border-bottom:1px solid rgba(255,255,255,0.06);
+
+}
+
+.info-row span{
+
+  color:var(--muted);
+
+}
+
+/* SKILLS */
+
+.skills-grid{
+
+  display:grid;
+
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+
+  gap:25px;
+
+}
+
+.skill-card{
+
+  padding:35px;
+
+  transition:.35s;
+
+}
+
+.skill-card:hover{
+
+  transform:translateY(-8px);
+
+}
+
+.skill-icon{
+
+  font-size:40px;
+
+  margin-bottom:20px;
+
+}
+
+.skill-title{
+
+  font-family:var(--heading);
+
+  font-size:30px;
+
+  margin-bottom:20px;
+
+}
+
+.skill-tags{
+
+  display:flex;
+
+  flex-wrap:wrap;
+
+  gap:10px;
+
+}
+
+.skill-tags span{
+
+  background:rgba(255,255,255,0.05);
+
+  padding:8px 14px;
+
+  border-radius:40px;
+
+  font-size:12px;
+
+  color:#b8c1d9;
+
+}
+
+/* PROJECTS */
+
+.projects-grid{
+
+  display:grid;
+
+  grid-template-columns:1fr 1fr;
+
+  gap:30px;
+
+}
+
+.project-card{
+
+  padding:40px;
+
+  transition:.35s;
+
+}
+
+.project-card:hover{
+
+  transform:translateY(-8px);
+
+}
+
+.project-date{
+
+  color:var(--accent2);
+
+  font-family:var(--mono);
+
+  font-size:11px;
+
+  letter-spacing:0.2em;
+
+  text-transform:uppercase;
+
+  margin-bottom:15px;
+
+}
+
+.project-title{
+
+  font-family:var(--heading);
+
+  font-size:38px;
+
+  line-height:1.1;
+
+  letter-spacing:-0.04em;
+
+  margin-bottom:20px;
+
+}
+
+.project-desc{
+
+  line-height:2;
+
+  color:#b0bdd7;
+
+}
+
+/* CONTACT */
+
+.contact{
+
+  text-align:center;
+
+}
+
+.contact-box{
+
+  padding:80px 50px;
+
+}
+
+.contact-title{
+
+  font-family:var(--heading);
+
+  font-size:clamp(55px,8vw,110px);
+
+  line-height:0.95;
+
+  margin-bottom:30px;
+
+  background:
+  linear-gradient(
+  135deg,
+  #ffffff,
+  #8ec5ff,
+  #c4b5fd
+  );
+
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+
+}
+
+.contact-title span{
+
+  font-style:italic;
+
+}
+
+.contact-text{
+
+  max-width:700px;
+
+  margin:auto;
+
+  line-height:2;
+
+  color:#b8c1d9;
+
+  margin-bottom:50px;
+
+}
+
+.contact-links{
+
+  display:flex;
+
+  justify-content:center;
+
+  flex-wrap:wrap;
+
+  gap:20px;
+
+}
+
+.contact-links a{
+
+  text-decoration:none;
+
+  color:white;
+
+  padding:15px 28px;
+
+  border-radius:14px;
+
+  border:1px solid var(--border);
+
+  transition:.35s;
+
+}
+
+.contact-links a:hover{
+
+  transform:translateY(-4px);
+
+  background:rgba(255,255,255,0.05);
+
+}
+
+/* FOOTER */
+
+footer{
+
+  padding:30px;
+
+  text-align:center;
+
+  border-top:1px solid rgba(255,255,255,0.06);
+
+  color:var(--muted);
+
+}
+
+/* REVEAL */
+
+.reveal{
+
+  opacity:0;
+
+  transform:translateY(40px);
+
+  transition:
+  opacity .6s ease,
+  transform .6s ease;
+
+}
+
+.reveal.visible{
+
+  opacity:1;
+
+  transform:translateY(0);
+
+}
+
+/* GPU OPTIMIZATION */
+
+.hero-name,
+.glass,
+.skill-card,
+.project-card,
+.hero-glow{
+
+  will-change:transform;
+
+  transform:translateZ(0);
+
+}
+
+/* ANIMATION */
+
+@keyframes fadeUp{
+
+  from{
+
+    opacity:0;
+    transform:translateY(30px);
+
+  }
+
+  to{
+
+    opacity:1;
+    transform:translateY(0);
+
+  }
+
+}
+
+@keyframes floaty{
+
+  0%,100%{
+    transform:translateY(0);
+  }
+
+  50%{
+    transform:translateY(-15px);
+  }
+
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+  nav{
+    padding:20px;
+  }
+
+  .nav-links{
+    display:none;
+  }
+
+  section{
+    padding:90px 20px;
+  }
+
+  .hero{
+    padding:140px 20px;
+  }
+
+  .hero-glow{
+    display:none;
+  }
+
+  #particles{
+    display:none;
+  }
+
+  .about-grid{
+    grid-template-columns:1fr;
+  }
+
+  .projects-grid{
+    grid-template-columns:1fr;
+  }
+
+  .hero-stats{
+    gap:30px;
+  }
+
+  .stat h2{
+    font-size:42px;
+  }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- PARTICLES -->
+<div id="particles"></div>
+
+<!-- NAVBAR -->
+
+<nav>
+
+<a href="#" class="logo">
+K<span>.</span>C
+</a>
+
+<ul class="nav-links">
+
+<li><a href="#about">About</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#contact">Contact</a></li>
+
+</ul>
+
+</nav>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="hero-glow"></div>
+
+<div class="hero-content">
+
+<div class="hero-tag">
+Available for Internships • 2026
+</div>
+
+<h1 class="hero-name">
+Khushi <br>
+<span class="stroke">Changani</span>
+</h1>
+
+<p class="hero-title">
+AI & MACHINE LEARNING ENGINEER
+</p>
+
+<p class="hero-desc">
+AI & Machine Learning Engineer crafting intelligent digital experiences,
+research-driven systems, and scalable AI solutions with a blend of
+innovation, aesthetics, and strategic execution.
+</p>
+
+<div class="hero-stats">
+
+<div class="stat">
+<h2>8.6</h2>
+<p>CGPA</p>
+</div>
+
+<div class="stat">
+<h2>#1</h2>
+<p>Batch Rank</p>
+</div>
+
+<div class="stat">
+<h2>2+</h2>
+<p>Papers</p>
+</div>
+
+<div class="stat">
+<h2>15+</h2>
+<p>Teams Led</p>
+</div>
+
+</div>
+
+<div class="hero-btns">
+
+<a href="#contact" class="btn btn-primary">
+Get In Touch
+</a>
+
+<a href="#projects" class="btn btn-secondary">
+View Projects
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section id="about">
+
+<div class="section-top">
+
+<div class="section-tag">
+About
+</div>
+
+<h2 class="section-title">
+Building Future <em>with AI</em>
+</h2>
+
+</div>
+
+<div class="about-grid">
+
+<div class="about-left glass reveal">
+
+<p>
+I'm a B.Tech student in CSE — AI & ML at ITM Gwalior,
+ranked #1 in my batch for two consecutive years.
+</p>
+
+<p>
+From leading IEEE events for 200+ attendees to building
+AI-powered platforms and publishing research papers,
+I thrive at the intersection of technology and leadership.
+</p>
+
+<p>
+I’m passionate about intelligent systems, futuristic UI,
+machine learning, and impactful innovation.
+</p>
+
+</div>
+
+<div class="about-right glass reveal">
+
+<div class="cgpa">
+8.7
+</div>
+
+<div class="info">
+
+<div class="info-row">
+<span>Degree</span>
+<strong>B.Tech CSE-AI&ML</strong>
+</div>
+
+<div class="info-row">
+<span>Institute</span>
+<strong>ITM,Gwalior</strong>
+</div>
+
+<div class="info-row">
+<span>Batch</span>
+<strong>2023 — 2027</strong>
+</div>
+
+<div class="info-row">
+<span>Location</span>
+<strong>India</strong>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- SKILLS -->
+
+<section id="skills">
+
+<div class="section-top">
+
+<div class="section-tag">
+Skills
+</div>
+
+<h2 class="section-title">
+Technical <em>Expertise</em>
+</h2>
+
+</div>
+
+<div class="skills-grid">
+
+<div class="skill-card glass reveal">
+
+<div class="skill-icon">🐍</div>
+
+<div class="skill-title">
+Programming
+</div>
+
+<div class="skill-tags">
+
+<span>Python</span>
+<span>Java</span>
+<span>JavaScript</span>
+<span>SQL</span>
+
+</div>
+
+</div>
+
+<div class="skill-card glass reveal">
+
+<div class="skill-icon">🤖</div>
+
+<div class="skill-title">
+Machine Learning
+</div>
+
+<div class="skill-tags">
+
+<span>TensorFlow</span>
+<span>NLP</span>
+<span>Keras</span>
+<span>Scikit-learn</span>
+
+</div>
+
+</div>
+
+<div class="skill-card glass reveal">
+
+<div class="skill-icon">⚡</div>
+
+<div class="skill-title">
+Development
+</div>
+
+<div class="skill-tags">
+
+<span>HTML</span>
+<span>CSS</span>
+<span>Flask</span>
+<span>Bootstrap</span>
+
+</div>
+
+</div>
+
+<div class="skill-card glass reveal">
+
+<div class="skill-icon">📊</div>
+
+<div class="skill-title">
+Analytics
+</div>
+
+<div class="skill-tags">
+
+<span>Pandas</span>
+<span>NumPy</span>
+<span>Excel</span>
+<span>Visualization</span>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- PROJECTS -->
+
+<section id="projects">
+
+<div class="section-top">
+
+<div class="section-tag">
+Projects
+</div>
+
+<h2 class="section-title">
+Featured <em>Projects</em>
+</h2>
+
+</div>
+
+<div class="projects-grid">
+
+<div class="project-card glass reveal">
+
+<div class="project-date">
+May 2025
+</div>
+
+<div class="project-title">
+CHATHeal Platform
+</div>
+
+<div class="project-desc">
+A modern mental wellness support platform with multiple
+interactive modules, AI integration, guided exercises,
+and user-focused UI/UX.
+</div>
+
+</div>
+
+<div class="project-card glass reveal">
+
+<div class="project-date">
+Dec 2024
+</div>
+
+<div class="project-title">
+Food Donation App
+</div>
+
+<div class="project-desc">
+Built a dual-user donation system connecting food donors
+with recipients, reducing workflow friction through
+smart operational design.
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact" class="contact">
+
+<div class="contact-box glass reveal">
+
+<h2 class="contact-title">
+Let's Build <span>Something Great</span>
+</h2>
+
+<p class="contact-text">
+
+I'm actively seeking opportunities in AI, ML engineering,
+research, and modern tech innovation.
+Open to internships, collaborations, and global projects.
+
+</p>
+
+<div class="contact-links">
+
+<a href="mailto:changanikhushi16@gmail.com">
+Email
+</a>
+
+<a href="https://linkedin.com" target="_blank">
+LinkedIn
+</a>
+
+<a href="tel:+917080865972">
+Call
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+© 2026 Khushi Changani • Designed with futuristic aesthetics
+</footer>
+
+<!-- PARTICLES -->
+<script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+
+<script>
+
+/* PARTICLES */
+
+if(window.innerWidth > 768){
+
+tsParticles.load("particles", {
+
+fpsLimit:60,
+
+particles:{
+
+number:{
+value:25
+},
+
+color:{
+value:"#8b5cf6"
+},
+
+links:{
+enable:false
+},
+
+move:{
+enable:true,
+speed:0.4
+},
+
+size:{
+value:1.5
+},
+
+opacity:{
+value:0.3
+}
+
+},
+
+detectRetina:false
+
+})
+
+}
+
+/* REVEAL */
+
+const reveals=document.querySelectorAll('.reveal');
+
+const observer=new IntersectionObserver((entries)=>{
+
+entries.forEach((entry)=>{
+
+if(entry.isIntersecting){
+
+entry.target.classList.add('visible');
+
+}
+
+})
+
+},{
+threshold:0.1
+})
+
+reveals.forEach((el)=>observer.observe(el));
+
+</script>
+
+</body>
+</html>
